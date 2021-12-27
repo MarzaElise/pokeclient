@@ -64,10 +64,9 @@ class Berry:
         return Item(self.data.get("item"))
 
     @property
+    def natural_gift_type(self):
+        return Item(self.data.get("natural_gift_type"))
+
+    @property
     def flavors(self):
         return [BerryFlavorMap(_) for _ in self.data.get("flavors")]       
-
-"""
-TODO : 
-natural_gift_type
-"""

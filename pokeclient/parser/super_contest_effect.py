@@ -15,8 +15,10 @@ class SuperContestEffect:
     def appeal(self):
         return self.data.get('appeal')
 
-'''
-TODO :
-flavor_text_entries
-moves
-'''
+    @property
+    def flavor_text_entries(self):
+        return [_ for _ in self.data.get('flavor_text_entries')]
+
+    @property
+    def moves(self):
+        return [_ for _ in self.data.get('moves')]

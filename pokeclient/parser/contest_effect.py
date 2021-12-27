@@ -17,8 +17,10 @@ class ContestEffect:
     def jam(self):
         return self.data.get('jam')
 
-'''
-TODO :
-effect_entries
-flavor_text_entries
-'''
+    @property
+    def effect_entries(self):
+        return [_ for _ in self.data.get('effect_entries')]
+
+    @property
+    def flavor_text_entries(self):
+        return [_ for _ in self.data.get('flavor_text_entries')]
