@@ -20,7 +20,6 @@ class Machine:
     def version_group(self):
         return VersionGroup(self.data.get('version_group'))
 
-'''
-TODO:
-move
-'''
+    @property
+    def version_group(self):
+        return VersionGroup(self.data.get('move'))

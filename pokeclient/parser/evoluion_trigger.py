@@ -19,7 +19,6 @@ class EvolutionTrigger:
     def names(self):
         return [Name(_) for _  in self.data.get('names')]
 
-'''
-TODO :
-pokemon_species
-'''  
+    @property
+    def pokemon_species(self):
+        return [Name(_) for _  in self.data.get('pokemon_species')]

@@ -12,10 +12,9 @@ class PokemonEntry:
     def entry_number(self):
         return self.data.get("entry_number")
 
-    '''
-    TODO:
-    pokemon_species
-    '''
+    @property
+    def pokemon_species(self):
+        return self.data.get("pokemon_species")
 
 
 @dataclass(frozen=True)
@@ -40,6 +39,10 @@ class Pokedex:
         return self.data.get("names")
 
     @property
+    def region(self):
+        return self.data.get("region")
+
+    @property
     def pokemon_entries(self):
         return [PokemonEntry(_) for _ in self.data.get("pokemon_entries")]
 
@@ -50,8 +53,3 @@ class Pokedex:
     @property
     def version_groups(self):
         return [VersionGroup(_) for _ in self.data.get("version_groups")]
-
-    '''
-    TODO:
-    region
-    '''

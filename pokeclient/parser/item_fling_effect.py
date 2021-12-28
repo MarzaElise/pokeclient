@@ -19,7 +19,6 @@ class ItemFlingEffect:
     def items(self):
         return [Item(_) for _ in self.data.get("items")]
 
-'''
-TODO:
-effect_entries
-'''
+    @property
+    def effect_entries(self):
+        return [_ for _ in self.data.get("effect_entries")]

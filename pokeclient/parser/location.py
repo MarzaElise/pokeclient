@@ -16,12 +16,15 @@ class Location:
         return self.data.get("name")
 
     @property
+    def region(self):
+        return self.data.get("region")
+
+    @property
     def names(self):
         return [Name(_) for _ in self.data.get("names")]
 
 '''
 TODO:
 game_indices
-region
 areas
 '''

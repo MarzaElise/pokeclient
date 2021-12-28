@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from ..payload import DataPayload
 from evoluion_trigger import EvolutionTrigger
 from item import Item
+from location import Location
 
 @dataclass(frozen=True)
 class EvolutionDetail:
@@ -52,15 +53,30 @@ class EvolutionDetail:
     def held_item(self):
         return Item(self.data.get('held_item'))
 
-    '''
-    TODO : 
-    known_move
-    known_move_type
-    location
-    party_species
-    party_type
-    trade_species
-    '''
+    @property
+    def known_move(self):
+        return self.data.get('known_move')
+
+    @property
+    def known_move_type(self):
+        return self.data.get('known_move_type')
+
+    @property
+    def location(self):
+        return Location(self.data.get('location'))
+
+    @property
+    def party_species(self):
+        return self.data.get('party_species')
+
+    @property
+    def party_type(self):
+        return self.data.get('party_type')
+
+    @property
+    def trade_species(self):
+        return self.data.get('trade_species')
+
 
 @dataclass(frozen=True)
 class ChainLink:
@@ -79,10 +95,10 @@ class ChainLink:
     def evolves_to(self):
         return self.data.get('evolves_to')
 
-    '''
-    TODO :
-    species
-    '''
+    @property
+    def species(self):
+        return self.data.get('species')
+
 
 
 @dataclass(frozen=True)

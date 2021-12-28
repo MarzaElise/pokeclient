@@ -33,8 +33,10 @@ class VersionGroup:
     def pokedexes(self):
         return [Generation(_) for _ in self.data.get('generation')]
 
-'''
-TODO :
-move_learn_methods
-regions
-'''
+    @property
+    def regions(self):
+        return [_ for _ in self.data.get('regions')]
+
+    @property
+    def move_learn_methods(self):
+        return [_ for _ in self.data.get('move_learn_methods')]

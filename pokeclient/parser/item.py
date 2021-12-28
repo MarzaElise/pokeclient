@@ -91,10 +91,18 @@ class Item:
     def attributes(self):
         return [ItemAttribute(_) for _ in self.data.get("attributes")]
 
-'''
-TODO:
-effect_entries
-flavor_text_entries
-game_indices
-machines
-'''
+    @property
+    def machines(self):
+        return [_ for _ in self.data.get("machines")]
+
+    @property
+    def effect_entries(self):
+        return [_ for _ in self.data.get("effect_entries")]
+
+    @property
+    def flavor_text_entries(self):
+        return [_ for _ in self.data.get("flavor_text_entries")]
+
+    @property
+    def game_indices(self):
+        return [_ for _ in self.data.get("game_indices")]
